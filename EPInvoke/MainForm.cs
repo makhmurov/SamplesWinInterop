@@ -100,11 +100,13 @@ namespace EPInvoke
 
         private void UpdateListView()
         {
+            fListView.BeginUpdate();
             fListView.Items.Clear();
             foreach (var item in files)
             {
                 fListView.Items.Add(GetListItem(item));
             }
+            fListView.EndUpdate();
         }
 
         private ListViewItem GetListItem(FindData fd)
